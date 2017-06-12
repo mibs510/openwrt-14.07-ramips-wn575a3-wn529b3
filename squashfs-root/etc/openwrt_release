@@ -1,0 +1,7 @@
+DISTRIB_ID="OpenWrt"
+DISTRIB_RELEASE="14.07"
+DISTRIB_REVISION="r8319"
+DISTRIB_CODENAME="barrier_breaker"
+DISTRIB_TARGET="ramips/generic"
+DISTRIB_DESCRIPTION="OpenWrt Barrier Breaker r8319"
+DISTRIB_TAINTS="no-all no-ipv6 busybox"

@@ -1,0 +1,10 @@
+Package: kmod-lib-crc-itu-t
+Version: 3.10.49-1
+Depends: kernel (=3.10.49-1-892693db97f7322dc9049e7bad1ddcac)
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ramips_24kec
+Installed-Size: 1317
+Description:  Kernel module for CRC ITU-T V.41 support

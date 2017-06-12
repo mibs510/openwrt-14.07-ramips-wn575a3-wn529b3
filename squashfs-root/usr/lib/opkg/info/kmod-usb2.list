@@ -1,0 +1,4 @@
+/etc/modules-boot.d/40-usb2
+/etc/modules.d/40-usb2
+/lib/modules/3.10.49/ehci-platform.ko
+/lib/modules/3.10.49/ehci-hcd.ko
