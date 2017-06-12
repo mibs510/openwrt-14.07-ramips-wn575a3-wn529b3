@@ -11,13 +11,13 @@ This project will be a work in progress. There were already many pre-installed p
 infact opkg was completely removed from the file system. All of the files found in a typical /usr/lib/opkg/info/* were copied over for opkg to function
 normally regardless if the root filesystem actually contains each file in the repective *.list file.
 # What has to be worked on
-+ Obvisouly encryption
+1. Obvisouly encryption
 ...That's our biggest priority since the stock firmware gave us the same freedom when it came editing radio settings.
-+ The entire network stack
+2. The entire network stack
 ...Right now /bin/mu is responsible for bringing up all network interfaces including udhcpc, dnsmasq, and miniupnpd. 
 ...Simply removing /bin/mu, /etc/rc.d/S90mu, /etc/init.d/mu and replacing them with the repective rc.d links, init.d scripts, and binaries of odhcpd, odhcp6c, dnsmaq does not solve this issue.
-...Probable need to further examine the default web interface, and ho it functions. 
-+ The package system
+...Probable need to further examine the default web interface, and how it functions. 
+3. The package system
 
 #Bootloader
-The binary includes an official WN529B3 uImage kernel so there is probably no need for an unlocked bootloader on both devices.
+The binary includes an official WN529B3 uImage kernel so there is no need for an unlocked bootloader on both devices.
