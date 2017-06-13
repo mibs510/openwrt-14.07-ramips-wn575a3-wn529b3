@@ -12,8 +12,10 @@ infact opkg was completely removed from the file system. All of the files found 
 normally regardless if the root filesystem actually contains each file in the repective *.list file.
 # What has to be worked on
 1. Obvisouly encryption
+
 ...That's our biggest priority since the stock firmware gave us the same freedom when it came editing radio settings.
 2. The entire network stack
+
 ...Right now /bin/mu is responsible for bringing up all network interfaces including udhcpc, dnsmasq, and miniupnpd. 
 ...Simply removing /bin/mu, /etc/rc.d/S90mu, /etc/init.d/mu and replacing them with the repective rc.d links, init.d scripts, and binaries of odhcpd, odhcp6c, dnsmaq does not solve this issue.
 ...Probable need to further examine the default web interface, and how it functions. 
