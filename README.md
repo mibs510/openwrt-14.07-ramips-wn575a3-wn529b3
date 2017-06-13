@@ -21,5 +21,5 @@ normally regardless if the root filesystem actually contains each file in the re
    * Probable need to further examine the default web interface, and how it functions. 
 3. The package system
 
-#Bootloader
+# Bootloader
 The binary includes an official WN529B3 uImage kernel so there is no need for an unlocked bootloader on both devices.
