@@ -24,5 +24,5 @@ normally regardless if the root filesystem actually contains each file in the re
 # Bootloader
 The binary includes an official WN529B3 uImage kernel so there is no need for an unlocked bootloader on both devices.
 
-# Error(s) while repacking
+# Prereqs
 If you don't already have `mksquashfs` or `padjffs2` you can get them both from [here](https://github.com/rssnsj/firmware-tools).
