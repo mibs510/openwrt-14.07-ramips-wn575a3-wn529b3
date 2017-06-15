@@ -26,3 +26,11 @@ The binary includes an official WN529B3 uImage kernel so there is no need for an
 
 # Prereqs
 If you don't already have `mksquashfs` or `padjffs2` you can get them both from [here](https://github.com/rssnsj/firmware-tools).
+
+# 802.11 Encryption
+Although in luci you're not able to edit the encryption mode of the radios, uci is able to change it and the commits are effective upon rebooting. For more details refer to [this](https://wiki.openwrt.org/doc/uci/wireless/encryption).
+## WPA2 (PSK)
+`root@OpenWrt:~# uci set wireless.@wifi-iface[0].encryption=psk2`
+`root@OpenWrt:~# uci set wireless.@wifi-iface[0].key="your_password"`
+`root@OpenWrt:~# uci commit wireless`
+`root@OpenWrt:~# reboot && exit`
