@@ -10,7 +10,7 @@ SSH is enabled on **port 22**, with a username of **root** and a password of **t
 This project will be a work in progress. There were already many pre-installed packages but no opkg tracking methods were intact in /usr/lib/opkg/info/* 
 infact opkg was completely removed from the file system. All of the files found in a typical /usr/lib/opkg/info/* were copied over for opkg to function
 normally regardless if the root filesystem actually contains each file in the repective *.list file.
-# What has to be worked on
+# What needs work
 1. Obvisouly encryption
 
    * That's our biggest priority since the stock firmware gave us the same freedom when it came editing radio settings.
@@ -31,6 +31,9 @@ If you don't already have `mksquashfs` or `padjffs2` you can get them both from 
 Although in luci you're not able to edit the encryption mode of the radios, uci is able to change it and the commits are effective upon rebooting. For more details refer to [this](https://wiki.openwrt.org/doc/uci/wireless/encryption).
 ## WPA2 (PSK)
 `root@OpenWrt:~# uci set wireless.@wifi-iface[0].encryption=psk2`
+
 `root@OpenWrt:~# uci set wireless.@wifi-iface[0].key="your_password"`
+
 `root@OpenWrt:~# uci commit wireless`
+
 `root@OpenWrt:~# reboot && exit`
