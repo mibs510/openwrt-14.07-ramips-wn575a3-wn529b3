@@ -5,7 +5,9 @@ Project page: [OpenWRT for WS-WN529B3](http://osmar.gonzal.us/openwrt-ws-wn529b3
 # What works
 Mostly everything besides being able to change the encryption type on the two radios, it's limited to "No Encryption", "WEP Open System", and "WEP Shared Key"
 # SSH
-SSH is enabled on **port 22**, with a username of **root** and a password of **toor**. 
+SSH is enabled on **port 22**, with a username of **root** and a password of **toor**.
+# Telnet
+Disabled!
 # Packages
 This project will be a work in progress. There were already many pre-installed packages but no opkg tracking methods were intact in /usr/lib/opkg/info/* 
 infact opkg was completely removed from the file system. All of the files found in a typical /usr/lib/opkg/info/* were copied over for opkg to function
@@ -21,10 +23,12 @@ normally regardless if the root filesystem actually contains each file in the re
    * Probable need to further examine the default web interface, and how it functions. 
 3. The package system
 
+   * Include as much as possible from the *.list & *.conf files in /usr/lib/opkg/*.list,*.conf excluding the unnecessary such usb support.
+
 # Bootloader
 The binary includes an official WN529B3 uImage kernel so there is no need for an unlocked bootloader on both devices.
 
-# Prereqs
+# Before you repack.sh
 If you don't already have `mksquashfs` or `padjffs2` you can get them both from [here](https://github.com/rssnsj/firmware-tools).
 
 # 802.11 Encryption
