@@ -1,6 +1,5 @@
 # Put your custom commands here that should be executed once
 # the system init finished. By default this file does nothing.
-RESET_FLAG=`cat /etc/firmware | grep RESET | cut -b  7-`
-[ -f /usr/bin/watchdog ] && /usr/bin/watchdog $RESET_FLAG &
+
 
 exit 0

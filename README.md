@@ -2,8 +2,10 @@
 Project page: [OpenWRT for WS-WN529B3](http://osmar.gonzal.us/openwrt-ws-wn529b3/) & [OpenWRT for WL-WN575A3](http://osmar.gonzal.us/openwrt-for-wl-wn575a3/)
 # Default IP Address
 192.168.10.1
+# Flashing
+The file `openwrt-14.07-ramips-wn575a3-wn529b3.bin` is not sysupgrade compatible, so neither in LuCI or `sysupgrade` in SSH/CLI will accept this image. Instead you will need to flash it via tftpd. More can be found [here](https://wiki.openwrt.org/toh/wavlink/wl-wn575a3). 
 # What works
-Mostly everything besides being able to change the encryption type on the two radios, it's limited to "No Encryption", "WEP Open System", and "WEP Shared Key"
+Mostly everything besides being able to change the encryption type (via LuCI) on the two radios, it's limited to "No Encryption", "WEP Open System", and "WEP Shared Key"
 # SSH
 SSH is enabled on **port 22**, with a username of **root** and a password of **toor**.
 # Telnet
@@ -33,7 +35,7 @@ If you don't already have `mksquashfs` or `padjffs2` you can get them both from 
 
 # 802.11 Encryption
 Although in luci you're not able to edit the encryption mode of the radios, uci is able to change it and the commits are effective upon rebooting. For more details refer to [this](https://wiki.openwrt.org/doc/uci/wireless/encryption).
-## WPA2 (PSK)
+## WPA2 (PSK) example
 `root@OpenWrt:~# uci set wireless.@wifi-iface[0].encryption=psk2`
 
 `root@OpenWrt:~# uci set wireless.@wifi-iface[0].key="your_password"`
