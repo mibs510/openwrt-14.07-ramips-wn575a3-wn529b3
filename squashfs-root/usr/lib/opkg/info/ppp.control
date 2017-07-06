@@ -5,5 +5,5 @@ Source: package/network/services/ppp
 Section: net
 Maintainer: Jo-Philipp Wich <xm@subsignal.org>
 Architecture: ramips_24kec
-Installed-Size: 106270
+Installed-Size: 106385
 Description:  This package contains the PPP (Point-to-Point Protocol) daemon.

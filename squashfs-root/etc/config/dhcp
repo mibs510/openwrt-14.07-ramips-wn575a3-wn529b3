@@ -22,8 +22,8 @@ config dnsmasq
 
 config dhcp lan
 	option interface	lan
-	option start 	50
-	option limit	200
+	option start 	100
+	option limit	150
 	option leasetime	12h
 
 config dhcp wan

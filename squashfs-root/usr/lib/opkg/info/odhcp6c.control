@@ -6,5 +6,5 @@ License: GPL-2.0
 Section: net
 Maintainer: Steven Barth <steven@midlink.org>
 Architecture: ramips_24kec
-Installed-Size: 23056
+Installed-Size: 23147
 Description:  Embedded DHCPv6-client for OpenWrt

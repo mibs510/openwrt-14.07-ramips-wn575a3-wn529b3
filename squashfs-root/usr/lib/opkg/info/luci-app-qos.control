@@ -1,0 +1,9 @@
+Package: luci-app-qos
+Version: git-d30e460-1
+Depends: libc, qos-scripts
+Source: package/ramips/ui/luci-mtk
+Section: luci
+Maintainer: LuCI Development Team <luci@lists.subsignal.org>
+Architecture: ramips_24kec
+Installed-Size: 11090
+Description:  Quality of Service configuration module

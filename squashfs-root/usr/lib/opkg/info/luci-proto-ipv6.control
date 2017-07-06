@@ -1,0 +1,9 @@
+Package: luci-proto-ipv6
+Version: git-d30e460-1
+Depends: libc
+Source: package/ramips/ui/luci-mtk
+Section: luci
+Maintainer: LuCI Development Team <luci@lists.subsignal.org>
+Architecture: ramips_24kec
+Installed-Size: 3462
+Description:  Support for DHCPv6/6in4/6to4/6rd/DS-Lite

@@ -6,5 +6,5 @@ License: ISC BSD-3c
 Section: utils
 Maintainer: Felix Fietkau <nbd@openwrt.org>
 Architecture: ramips_24kec
-Installed-Size: 5426
+Installed-Size: 5432
 Description:  Library for parsing and generating JSON from shell scripts

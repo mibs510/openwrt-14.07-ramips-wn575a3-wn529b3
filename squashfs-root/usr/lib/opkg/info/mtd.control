@@ -5,6 +5,6 @@ Source: package/system/mtd
 License: GPLv2 GPLv2+
 Section: utils
 Architecture: ramips_24kec
-Installed-Size: 12183
+Installed-Size: 12184
 Description:  This package contains an utility useful to upgrade from other firmware or 
  older OpenWrt releases.

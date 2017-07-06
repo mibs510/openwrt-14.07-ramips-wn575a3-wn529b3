@@ -1,5 +1,5 @@
 Package: kernel
-Version: 3.10.49-1-892693db97f7322dc9049e7bad1ddcac
+Version: 3.10.14-p112871-1-dd43e6144d470720c2db96a57be0523a
 Depends: libc
 Source: package/kernel/linux
 License: GPLv2

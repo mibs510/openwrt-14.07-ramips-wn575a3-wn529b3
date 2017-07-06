@@ -6,5 +6,5 @@ License: ISC BSD-3c
 Section: libs
 Maintainer: Felix Fietkau <nbd@openwrt.org>
 Architecture: ramips_24kec
-Installed-Size: 3718
+Installed-Size: 3720
 Description:  blobmsg <-> json conversion library

@@ -1,0 +1,9 @@
+Package: luci-app-commands
+Version: git-d30e460-1
+Depends: libc
+Source: package/ramips/ui/luci-mtk
+Section: luci
+Maintainer: LuCI Development Team <luci@lists.subsignal.org>
+Architecture: ramips_24kec
+Installed-Size: 15587
+Description:  LuCI Shell Command Module

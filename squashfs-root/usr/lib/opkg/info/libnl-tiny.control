@@ -6,5 +6,5 @@ License: GPLv2 LGPLv2.1
 Section: libs
 Maintainer: Felix Fietkau <nbd@openwrt.org>
 Architecture: ramips_24kec
-Installed-Size: 12964
+Installed-Size: 12963
 Description:  This package contains a stripped down version of libnl

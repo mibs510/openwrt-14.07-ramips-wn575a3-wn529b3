@@ -1,10 +1,10 @@
 Package: kmod-ipv6
-Version: 3.10.49-1
-Depends: kernel (=3.10.49-1-892693db97f7322dc9049e7bad1ddcac)
+Version: 3.10.14-p112871-1
+Depends: kernel (=3.10.14-p112871-1-dd43e6144d470720c2db96a57be0523a)
 Source: package/kernel/linux
 License: GPLv2
 Section: kernel
 Status: unknown hold not-installed
 Architecture: ramips_24kec
-Installed-Size: 149760
+Installed-Size: 105
 Description:  Kernel modules for IPv6 support

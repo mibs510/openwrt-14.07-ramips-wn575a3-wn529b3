@@ -6,5 +6,5 @@ License: LGPLv2.1
 Section: libs
 Maintainer: Felix Fietkau <nbd@openwrt.org>
 Architecture: ramips_24kec
-Installed-Size: 9076
+Installed-Size: 9081
 Description:  OpenWrt RPC client library

@@ -6,5 +6,5 @@ License: GPLv2
 Section: base
 Maintainer: Felix Fietkau <nbd@openwrt.org>
 Architecture: ramips_24kec
-Installed-Size: 58316
+Installed-Size: 58013
 Description:  OpenWrt Network Interface Configuration Daemon

@@ -168,12 +168,16 @@ EOF
 
 ucidef_set_interface_lan() {
 	local ifname=$1
-	lanip=`sed -n /LANIP/p /etc/firmware |awk -F "=" '{print $2}'` 
+
 	uci batch <<EOF
 set network.lan='interface'
+set network.lan.ifname='$ifname'
+set network.lan.force_link=1
+set network.lan.type='bridge'
 set network.lan.proto='static'
-set network.lan.ipaddr='${lanip}'
+set network.lan.ipaddr='192.168.1.1'
 set network.lan.netmask='255.255.255.0'
+set network.lan.ip6assign='60'
 EOF
 }
 
@@ -182,7 +186,11 @@ ucidef_set_interface_wan() {
 
 	uci batch <<EOF
 set network.wan='interface'
+set network.wan.ifname='$ifname'
 set network.wan.proto='dhcp'
+set network.wan6='interface'
+set network.wan6.ifname='@wan'
+set network.wan6.proto='dhcpv6'
 EOF
 }
 

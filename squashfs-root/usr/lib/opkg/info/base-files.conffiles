@@ -9,3 +9,4 @@
 /etc/rc.local
 /etc/sysupgrade.conf
 /etc/config/system
+/etc/config/fstab

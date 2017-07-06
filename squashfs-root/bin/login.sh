@@ -5,10 +5,8 @@ if ( ! grep -qs '^root:[!x]\?:' /etc/shadow || \
      ! grep -qs '^root:[!x]\?:' /etc/passwd ) && \
    [ -z "$FAILSAFE" ]
 then
-#	echo "Login failed."
-#	exit 0
-	echo "WARNING: telnet is a security risk"
-	busybox login
+	echo "Login failed."
+	exit 0
 else
 cat << EOF
  === IMPORTANT ============================
@@ -16,6 +14,6 @@ cat << EOF
   this will disable telnet and enable SSH
  ------------------------------------------
 EOF
-exec /bin/ash --login
 fi
 
+exec /bin/ash --login

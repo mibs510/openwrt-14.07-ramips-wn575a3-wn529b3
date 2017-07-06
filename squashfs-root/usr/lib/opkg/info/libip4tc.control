@@ -4,5 +4,5 @@ Depends: libc
 Source: package/network/utils/iptables
 Section: libs
 Architecture: ramips_24kec
-Installed-Size: 10171
+Installed-Size: 10181
 Description:  IPv4 firewall - shared libiptc library

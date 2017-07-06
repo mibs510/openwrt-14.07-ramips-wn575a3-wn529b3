@@ -1,2 +1,2 @@
-/lib/modules/3.10.49/crc-ccitt.ko
 /etc/modules.d/lib-crc-ccitt
+/lib/modules/3.10.14/crc-ccitt.ko

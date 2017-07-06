@@ -5,5 +5,5 @@ Source: package/network/services/ppp
 Section: net
 Maintainer: Jo-Philipp Wich <xm@subsignal.org>
 Architecture: ramips_24kec
-Installed-Size: 9516
+Installed-Size: 9512
 Description:  This package contains a PPPoE (PPP over Ethernet) plugin for ppp.

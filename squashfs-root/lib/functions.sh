@@ -154,13 +154,10 @@ config_list_foreach() {
 }
 
 insert_modules() {
-  for m in $*; do 
-    if [ -f /etc/modules.d/$m ]; then 
-      sed 's/^[^#]/insmod &/' /etc/modules.d/$m | ash 2>&- || : 
-    else 
-      modprobe $m 
-    fi 
-  done 
+	[ -d /etc/modules.d ] && {
+		cd /etc/modules.d
+		sed 's/^[^#]/insmod &/' $* | ash 2>&- || :
+	}
 }
 
 include() {

@@ -4,7 +4,7 @@ Depends: libc, kmod-ipt-core, libip4tc, libip6tc, libxtables
 Source: package/network/utils/iptables
 Section: net
 Architecture: ramips_24kec
-Installed-Size: 49669
+Installed-Size: 49675
 Description:  IP firewall administration tool.
  
  Matches:

@@ -1,12 +1,12 @@
 Package: kmod-ipt-core
-Version: 3.10.49-1
-Depends: kernel (=3.10.49-1-892693db97f7322dc9049e7bad1ddcac)
+Version: 3.10.14-p112871-1
+Depends: kernel (=3.10.14-p112871-1-dd43e6144d470720c2db96a57be0523a)
 Source: package/kernel/linux
 License: GPLv2
 Section: kernel
 Status: unknown hold not-installed
 Architecture: ramips_24kec
-Installed-Size: 30761
+Installed-Size: 25084
 Description:  Netfilter core kernel modules
  Includes:
  - comment

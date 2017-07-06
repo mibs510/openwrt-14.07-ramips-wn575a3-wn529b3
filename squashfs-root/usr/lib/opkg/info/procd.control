@@ -6,5 +6,5 @@ License: GPLv2
 Section: base
 Maintainer: John Crispin <blogic@openwrt.org>
 Architecture: ramips_24kec
-Installed-Size: 33443
+Installed-Size: 32420
 Description:  OpenWrt system process manager

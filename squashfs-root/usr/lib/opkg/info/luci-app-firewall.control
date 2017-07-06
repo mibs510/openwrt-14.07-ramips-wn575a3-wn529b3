@@ -1,0 +1,9 @@
+Package: luci-app-firewall
+Version: git-d30e460-1
+Depends: libc, firewall
+Source: package/ramips/ui/luci-mtk
+Section: luci
+Maintainer: LuCI Development Team <luci@lists.subsignal.org>
+Architecture: ramips_24kec
+Installed-Size: 64959
+Description:  Firewall and Portforwarding application

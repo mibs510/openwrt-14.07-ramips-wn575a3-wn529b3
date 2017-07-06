@@ -1,0 +1,9 @@
+Package: luci-mod-admin-full
+Version: git-d30e460-1
+Depends: libc, luci-base
+Source: package/ramips/ui/luci-mtk
+Section: luci
+Maintainer: LuCI Development Team <luci@lists.subsignal.org>
+Architecture: ramips_24kec
+Installed-Size: 71438
+Description:  LuCI Administration - full-featured for full control

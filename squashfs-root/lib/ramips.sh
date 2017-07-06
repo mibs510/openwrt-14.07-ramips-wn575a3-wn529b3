@@ -16,6 +16,9 @@ ramips_board_detect() {
 	*"7Links PX-4885")
 		name="px4885"
 		;;
+	*"Witi")
+		name="witi"
+		;;
 	*"8devices Carambola")
 		name="carambola"
 		;;
@@ -184,6 +187,9 @@ ramips_board_detect() {
 	*"Omnima MiniEMBWiFi")
 		name="omni-emb"
 		;;
+	*"Omnima MiniPlug")
+		name="omni-plug"
+		;;
 	*"Petatel PSR-680W"*)
 		name="psr-680w"
 		;;
@@ -234,6 +240,9 @@ ramips_board_detect() {
 		;;
 	*"V22RW-2X2")
 		name="v22rw-2x2"
+		;;
+	*"VoCore")
+		name="vocore"
 		;;
 	*"W502U")
 		name="w502u"

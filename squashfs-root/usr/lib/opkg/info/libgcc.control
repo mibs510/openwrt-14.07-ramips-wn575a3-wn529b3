@@ -6,5 +6,5 @@ Status: unknown hold not-installed
 Essential: yes
 Maintainer: Felix Fietkau <nbd@openwrt.org>
 Architecture: ramips_24kec
-Installed-Size: 31590
+Installed-Size: 31589
 Description:  GCC support library

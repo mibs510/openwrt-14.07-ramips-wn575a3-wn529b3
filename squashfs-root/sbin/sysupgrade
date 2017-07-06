@@ -35,7 +35,6 @@ while [ -n "$1" ]; do
 		-f) export CONF_IMAGE="$2"; shift;;
 		-F|--force) export FORCE=1;;
 		-T|--test) export TEST=1;;
-		-A|--Ali) export ALI_UPGRADE=1;;
 		-h|--help) export HELP=1; break;;
 		-*)
 			echo "Invalid option: $1"
@@ -110,7 +109,7 @@ add_uci_conffiles() {
 
 add_overlayfiles() {
 	local file="$1"
-	find /overlay/etc/config/ -type f | sed \
+	find /overlay/etc/ -type f | sed \
 		-e 's,^/overlay/,/,' \
 		-e '\,/META_[a-zA-Z0-9]*$,d' \
 		-e '\,/functions.sh$,d' \
@@ -137,15 +136,11 @@ do_save_conffiles() {
 		ask_bool 0 "Abort" && exit
 		return 0
 	}
-	#run_hooks "$CONFFILES" $sysupgrade_init_conffiles
-	#ask_bool 0 "Edit config file list" && vi "$CONFFILES"
+	run_hooks "$CONFFILES" $sysupgrade_init_conffiles
+	ask_bool 0 "Edit config file list" && vi "$CONFFILES"
 
 	v "Saving config files..."
 	[ "$VERBOSE" -gt 1 ] && TAR_V="v" || TAR_V=""
-	touch $CONFFILES
-	for cfg in `ls /overlay/etc/config`; do
-		echo "/etc/config/${cfg}" >> $CONFFILES
-	done
 	tar c${TAR_V}zf "$conf_tar" -T "$CONFFILES" 2>/dev/null
 
 	rm -f "$CONFFILES"
@@ -218,15 +213,10 @@ run_hooks "" $sysupgrade_pre_upgrade
 ubus call system upgrade
 touch /tmp/sysupgrade
 
-if [ $ALI_UPGRADE -eq 1 ]; then
-	echo "Ali upgrade, Already Kill"
-	sleep 3
-else
 if [ ! -f /tmp/failsafe ] ; then
 	kill_remaining TERM
 	sleep 3
 	kill_remaining KILL
-fi
 fi
 
 if [ -n "$(rootfs_type)" ]; then

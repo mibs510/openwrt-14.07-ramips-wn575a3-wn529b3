@@ -1,9 +1,0 @@
-Package: kmod-rt2x00-mmio
-Version: 3.10.49+2014-05-22-1
-Depends: kernel (=3.10.49-1-892693db97f7322dc9049e7bad1ddcac), kmod-rt2x00-lib, kmod-eeprom-93cx6
-Source: package/kernel/mac80211
-Section: kernel
-Maintainer: Felix Fietkau <nbd@openwrt.org>
-Architecture: ramips_24kec
-Installed-Size: 1866
-Description:  Ralink Drivers for RT2x00 cards (MMIO)

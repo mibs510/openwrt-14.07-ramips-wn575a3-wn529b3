@@ -5,5 +5,5 @@ Source: package/utils/jsonfilter
 Section: base
 Maintainer: Jo-Philipp Wich <jow@openwrt.org>
 Architecture: ramips_24kec
-Installed-Size: 7972
+Installed-Size: 7970
 Description:  OpenWrt JSON filter utility

@@ -1,0 +1,6 @@
+/lib/modules/3.10.14/mt7628.ko
+/etc/wireless/mt7628/mt7628.dat
+/etc/modules.d/90-mt7628
+/etc/wireless/mt7628/version
+/lib/wifi/mt7628.sh
+/etc/wireless/mt7628/mt7628.eeprom.bin

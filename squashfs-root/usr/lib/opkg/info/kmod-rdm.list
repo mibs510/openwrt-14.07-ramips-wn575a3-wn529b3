@@ -1,0 +1,2 @@
+/etc/modules.d/rdm
+/lib/modules/3.10.14/rt_rdm.ko

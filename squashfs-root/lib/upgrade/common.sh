@@ -219,12 +219,9 @@ jffs2_copy_config() {
 default_do_upgrade() {
 	sync
 	if [ "$SAVE_CONFIG" -eq 1 ]; then
-		
-		#get_image "$1" | mtd $MTD_CONFIG_ARGS -j "$CONF_TAR" write "$1" "${PART_NAME:-image}"
-		mtd $MTD_CONFIG_ARGS -j "$CONF_TAR" write "$1" "${PART_NAME:-image}"
+		get_image "$1" | mtd $MTD_CONFIG_ARGS -j "$CONF_TAR" write - "${PART_NAME:-image}"
 	else
-		#get_image "$1" | mtd write - "${PART_NAME:-image}"
-		mtd write "$1" "${PART_NAME:-image}"
+		get_image "$1" | mtd write - "${PART_NAME:-image}"
 	fi
 }
 
@@ -235,22 +232,17 @@ do_upgrade() {
 	else
 		default_do_upgrade "$ARGV"
 	fi
-	
+
 	if [ "$SAVE_CONFIG" -eq 1 ] && type 'platform_copy_config' >/dev/null 2>/dev/null; then
 		platform_copy_config
 	fi
 
-	if [ $ALI_UPGRADE -eq 1 ]; then
-		echo "Ali upgrade, Ali reboot"
-	else
-		v "Upgrade completed"
-		[ -n "$DELAY" ] && sleep "$DELAY"
-		ask_bool 1 "Reboot" && {
-			v "Rebooting system..."
-			reboot -f
-			sleep 5
-			echo b 2>/dev/null >/proc/sysrq-trigger
-		}
-	fi
-	
+	v "Upgrade completed"
+	[ -n "$DELAY" ] && sleep "$DELAY"
+	ask_bool 1 "Reboot" && {
+		v "Rebooting system..."
+		reboot -f
+		sleep 5
+		echo b 2>/dev/null >/proc/sysrq-trigger
+	}
 }

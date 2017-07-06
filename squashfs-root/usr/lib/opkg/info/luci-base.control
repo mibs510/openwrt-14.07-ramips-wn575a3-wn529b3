@@ -1,0 +1,9 @@
+Package: luci-base
+Version: git-d30e460-1
+Depends: libc, lua, libuci-lua, libubus-lua
+Source: package/ramips/ui/luci-mtk
+Section: luci
+Maintainer: LuCI Development Team <luci@lists.subsignal.org>
+Architecture: ramips_24kec
+Installed-Size: 141712
+Description:  LuCI core libraries

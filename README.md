@@ -1,45 +1,40 @@
 # openwrt-14.07-ramips-wn575a3-wn529b3
-Project page: [OpenWRT for WS-WN529B3](http://osmar.gonzal.us/openwrt-ws-wn529b3/) & [OpenWRT for WL-WN575A3](http://osmar.gonzal.us/openwrt-for-wl-wn575a3/)
+This page serves two things: 
+   * A ready-to-flash vanilla 14.07 OpenWrt image: `openwrt-14.07-ramips-wn575a3-wn529b3-squashfs.bin`
+   * A simple system of repacking your own customized tftp uploadable `firmware.bin` file
+
+# Supported Devices
+Most inexpensive chinese wireless access points which run off of a MediaTek MT7628AN & MT7612EN
+
+# More use(ful/less) information
+[OpenWRT for WS-WN529B3](http://osmar.gonzal.us/openwrt-ws-wn529b3/) & [OpenWRT for WL-WN575A3](http://osmar.gonzal.us/openwrt-for-wl-wn575a3/)
+
+# BIG thanks to
+[mqmaker.com](https://mqmaker.com/) for the wonderful OpenWrt make source found [here](https://github.com/mqmaker/witi-openwrt).
+
 # Default IP Address
-192.168.10.1
+192.168.1.1
+
 # Flashing
-The file `openwrt-14.07-ramips-wn575a3-wn529b3-squashfs.bin` is not sysupgrade compatible, so neither in LuCI or `sysupgrade` in SSH/CLI will accept this image. Instead you will need to flash it via tftpd. More can be found [here](https://wiki.openwrt.org/toh/wavlink/wl-wn575a3). 
-# What works
-Mostly everything besides being able to change the encryption type (via LuCI) on the two radios, it's limited to "No Encryption", "WEP Open System", and "WEP Shared Key"
-# SSH
-SSH is enabled on **port 22**, with a username of **root** and a password of **toor**.
-# Telnet
-Disabled!
-# Packages
-This project will be a work in progress. There were already many pre-installed packages but no opkg tracking methods were intact in /usr/lib/opkg/info/* 
-infact opkg was completely removed from the file system. All of the files found in a typical /usr/lib/opkg/info/* were copied over for opkg to function
-normally regardless if the root filesystem actually contains each file in the repective *.list file.
-# What needs work
-1. Obvisouly encryption
-
-   * That's our biggest priority since the stock firmware gave us the same freedom when it came editing radio settings.
-2. The entire network stack
-
-   * Right now /bin/mu is responsible for bringing up all network interfaces including udhcpc, dnsmasq, and miniupnpd. 
-   * Simply removing /bin/mu, /etc/rc.d/S90mu, /etc/init.d/mu and replacing them with the repective rc.d links, init.d scripts, and binaries of odhcpd, odhcp6c, dnsmaq does not solve this issue.
-   * Probable need to further examine the default web interface, and how it functions. 
-3. The package system
-
-   * Include as much as possible from the *.list & *.conf files in /usr/lib/opkg/*.list,*.conf excluding the unnecessary such usb support.
+TFTP method is typically the way one should flash images on these devices.
+Even if the stock firmware contains `sysupgrade` the side effects of using it are unkown.
+Refer to the "TFTP" section on [this page](https://wiki.openwrt.org/toh/wavlink/wl-wn575a3) for detailed tftp flashing instructions.
 
 # Bootloader
-The binary includes an official WN529B3 uImage kernel so there is no need for an unlocked bootloader on both devices.
+You may or may not have a bootloader allowing firmware downloads via tftp or writing upon downloading, this varies from device to device, model to model, brand to brand.
+One thing I've noticed is that there is no sure way to tell wether your device will be unlocked or locked before purchasing, WAVLINK/WINSTARS will dictate that.
+A guide will soon be posted shortly guiding you through a non-physical way of rewriting your bootloader. 
 
 # Before you repack.sh
 If you don't already have `mksquashfs` or `padjffs2` you can get them both from [here](https://github.com/rssnsj/firmware-tools).
 
-# 802.11 Encryption
-Although in luci you're not able to edit the encryption mode of the radios, uci is able to change it and the commits are effective upon rebooting. For more details refer to [this](https://wiki.openwrt.org/doc/uci/wireless/encryption).
-## WPA2 (PSK) example
-`root@OpenWrt:~# uci set wireless.@wifi-iface[0].encryption=psk2`
+# /etc/wireless/mt7628/mt7628.dat
+LuCI or uci2dat (I havent figured out who is responsible yet) *may* rewrite `CountryCode=CN` in /etc/wireless/mt7628/mt7628.dat:6 .
+In such case `CountryCode` must always equal to `CN` for 2.4 GHz radio to work properly regardless of your actual location.
+This will usually occur when you find yourself not being able to see 2.4 GHz ESSID.
 
-`root@OpenWrt:~# uci set wireless.@wifi-iface[0].key="your_password"`
+# /etc/opkg.conf
+Yes we're stuck on using the `mt7620a`'s packages since OpenWrt doesn't provide explicit `mt7628` packages anymore, at least not on the 14.07 branch.
 
-`root@OpenWrt:~# uci commit wireless`
 
-`root@OpenWrt:~# reboot && exit`
+
