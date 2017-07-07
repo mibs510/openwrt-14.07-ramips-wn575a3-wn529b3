@@ -7,7 +7,7 @@ This page serves two things:
 Most inexpensive chinese wireless access points which run off of a MediaTek MT7628AN & MT7612EN
 
 # More use(ful/less) information
-[OpenWRT for WS-WN529B3](http://osmar.gonzal.us/openwrt-ws-wn529b3/) & [OpenWRT for WL-WN575A3](http://osmar.gonzal.us/openwrt-for-wl-wn575a3/)
+[OpenWRT for WS-WN529B3](http://osmar.gonzal.us/openwrt-ws-wn529b3/#more-278) & [OpenWRT for WL-WN575A3](http://osmar.gonzal.us/openwrt-for-wl-wn575a3/#more-189)
 
 # BIG thanks to
 [mqmaker.com](https://mqmaker.com/) for the wonderful OpenWrt make source found [here](https://github.com/mqmaker/witi-openwrt).
@@ -31,7 +31,7 @@ If you don't already have `mksquashfs` or `padjffs2` you can get them both from 
 # /etc/wireless/mt7628/mt7628.dat
 LuCI or uci2dat (I havent figured out who is responsible yet) *may* rewrite `CountryCode=CN` in /etc/wireless/mt7628/mt7628.dat:6 .
 In such case `CountryCode` must always equal to `CN` for 2.4 GHz radio to work properly regardless of your actual location.
-This will usually occur when you find yourself not being able to see 2.4 GHz ESSID.
+This will usually occur when you find yourself not being able to see the 2.4 GHz ESSID.
 
 # /etc/opkg.conf
 Yes we're stuck on using the `mt7620a`'s packages since OpenWrt doesn't provide explicit `mt7628` packages anymore, at least not on the 14.07 branch.
