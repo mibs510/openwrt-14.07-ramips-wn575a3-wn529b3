@@ -30,8 +30,8 @@ If you don't already have `mksquashfs` or `padjffs2` you can get them both from 
 
 # /etc/wireless/mt7628/mt7628.dat
 LuCI or uci2dat (I havent figured out who is responsible yet) *may* rewrite `CountryCode=CN` in /etc/wireless/mt7628/mt7628.dat:6 .
-In such case `CountryCode` must always equal to `CN` for 2.4 GHz radio to work properly regardless of your actual location.
-This will usually occur when you find yourself not being able to see the 2.4 GHz ESSID.
+In such case `CountryCode` must always equal to `CN` for the 2.4 GHz radio to work properly regardless of your actual location.
+This will usually occur when you find yourself not being able to see the ESSID.
 
 # /etc/opkg.conf
 Yes we're stuck on using the `mt7620a`'s packages since OpenWrt doesn't provide explicit `mt7628` packages anymore, at least not on the 14.07 branch.
