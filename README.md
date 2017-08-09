@@ -23,7 +23,7 @@ Refer to the "TFTP" section on [this page](https://wiki.openwrt.org/toh/wavlink/
 # Bootloader
 You may or may not have a bootloader allowing firmware downloads via tftp or writing upon downloading, this varies from device to device, model to model, brand to brand.
 One thing I've noticed is that there is no sure way to tell wether your device will be unlocked or locked before purchasing, WAVLINK/WINSTARS will dictate that.
-A guide will soon be posted shortly guiding you through a non-physical way of rewriting your bootloader. 
+A guide will soon be posted shortly ([here](http://osmar.gonzal.us/rewriting-mt7628an-bootloader)) guiding you through a non-physical way of rewriting your bootloader. 
 
 # Before you repack.sh
 If you don't already have `mksquashfs` or `padjffs2` you can get them both from [here](https://github.com/rssnsj/firmware-tools).
